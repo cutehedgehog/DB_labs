@@ -4,7 +4,7 @@
 1. User Registration and Authentication, 
 2. User Profile Management:
 3. Post CRUD for Admin
-4. Comments CRUD for User
+4. Comments CRUD for User and Admin
 5. Tag CRUD for Admin
 6. Likes and Bookmarks CRUD for User
 7. Users should be able to follow other users.
