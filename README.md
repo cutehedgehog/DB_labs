@@ -48,80 +48,79 @@
    - Login
 # Enities
 ### User 
-  user_id INT PRIMARY KEY NOT NULL
-  username VARCHAR(255) NOT NULL
-  email VARCHAR(255) NOT NULL
-  password VARCHAR(255) NOT NULL
-  created_at TIMESTAMP NOT NULL
-  last_login TIMESTAMP NOT NULL
-  FOREIGN KEY (plan_id) REFERENCES Subscription_Plan(plan_id) 
+  * user_id INT PRIMARY KEY NOT NULL
+  * username VARCHAR(255) NOT NULL
+  * email VARCHAR(255) NOT NULL
+  * password VARCHAR(255) NOT NULL
+  * created_at TIMESTAMP NOT NULL
+  * last_login TIMESTAMP NOT NULL
+  * FOREIGN KEY (plan_id) REFERENCES Subscription_Plan(plan_id) 
 
 ### Post 
-  post_id INT PRIMARY KEY NOT NULL
-  title VARCHAR(255) NOT NULL
-  content TEXT NOT NULL
-  created_at TIMESTAMP NOT NULL
-  updated_at TIMESTAMP NOT NULL
-  FOREIGN KEY (user_id) REFERENCES User(user_id) NOT NULL
+  * post_id INT PRIMARY KEY NOT NULL
+  * title VARCHAR(255) NOT NULL
+  * content TEXT NOT NULL
+  * created_at TIMESTAMP NOT NULL
+  * updated_at TIMESTAMP NOT NULL
+  * FOREIGN KEY (user_id) REFERENCES User(user_id) NOT NULL
   
 ### Profile (One-to-one with User)
-  profile_id INT PRIMARY KEY NOT NULL
-  bio TEXT
-  avatar_url VARCHAR(255) NOT NULL
-  FOREIGN KEY (user_id) REFERENCES User(user_id) NOT NULL
+  * profile_id INT PRIMARY KEY NOT NULL
+  * bio TEXT
+  * avatar_url VARCHAR(255) NOT NULL
+  * FOREIGN KEY (user_id) REFERENCES User(user_id) NOT NULL
 
 ### Comment 
-  comment_id INT PRIMARY KEY NOT NULL
-  content TEXT NOT NULL
-  created_at TIMESTAMP NOT NULL
-  updated_at TIMESTAMP NOT NULL
-  FOREIGN KEY (user_id) REFERENCES User(user_id) NOT NULL
-  FOREIGN KEY (post_id) REFERENCES Post(post_id) NOT NULL
+  * comment_id INT PRIMARY KEY NOT NULL
+  * content TEXT NOT NULL
+  * created_at TIMESTAMP NOT NULL
+  * updated_at TIMESTAMP NOT NULL
+  * FOREIGN KEY (user_id) REFERENCES User(user_id) NOT NULL
+  * FOREIGN KEY (post_id) REFERENCES Post(post_id) NOT NULL
 
 ### Tag 
-  tag_id INT PRIMARY KEY NOT NULL
-  name VARCHAR(255) NOT NULL
+  * tag_id INT PRIMARY KEY NOT NULL
+  * name VARCHAR(255) NOT NULL
 
 ### Post Tag(MTM)
-  post_tag_id INT PRIMARY KEY NOT NULL
-  FOREIGN KEY (post_id) REFERENCES Post(post_id) NOT NULL
-  FOREIGN KEY (tag_id) REFERENCES Tag(tag_id) NOT NULL
+  * post_tag_id INT PRIMARY KEY NOT NULL
+  * FOREIGN KEY (post_id) REFERENCES Post(post_id) NOT NULL
+  * FOREIGN KEY (tag_id) REFERENCES Tag(tag_id) NOT NULL
 
 ### Like 
-  like_id INT PRIMARY KEY NOT NULL
-  FOREIGN KEY (user_id) REFERENCES User(user_id) NOT NULL
-  FOREIGN KEY (post_id) REFERENCES Post(post_id) NOT NULL
+  * like_id INT PRIMARY KEY NOT NULL
+  * FOREIGN KEY (user_id) REFERENCES User(user_id) NOT NULL
+  * FOREIGN KEY (post_id) REFERENCES Post(post_id) NOT NULL
 
-### Bookmark (
-  bookmark_id INT PRIMARY KEY NOT NULL
-  note TEXT
-  FOREIGN KEY (user_id) REFERENCES User(user_id) NOT NULL
-  FOREIGN KEY (post_id) REFERENCES Post(post_id) NOT NULL
-);
+### Bookmark 
+  * bookmark_id INT PRIMARY KEY NOT NULL
+  * note TEXT
+  * FOREIGN KEY (user_id) REFERENCES User(user_id) NOT NULL
+  * FOREIGN KEY (post_id) REFERENCES Post(post_id) NOT NULL
 
 ### Follow (MTM)
-  follow_id INT PRIMARY KEY NOT NULL
-  subscribed_at TIMESTAMP NOT NULL
-  FOREIGN KEY (follower_id) REFERENCES User(user_id) NOT NULL
-  FOREIGN KEY (following_id) REFERENCES User(user_id) NOT NULL
+  * follow_id INT PRIMARY KEY NOT NULL
+  * subscribed_at TIMESTAMP NOT NULL
+  * FOREIGN KEY (follower_id) REFERENCES User(user_id) NOT NULL
+  * FOREIGN KEY (following_id) REFERENCES User(user_id) NOT NULL
 
 ### Advertisement 
-  ad_id INT PRIMARY KEY NOT NULL
-  title VARCHAR(255) NOT NULL
-  content TEXT NOT NULL
-  image_url VARCHAR(255) 
-  start_date DATE NOT NULL
-  end_date DATE  NOT NULL
+  * ad_id INT PRIMARY KEY NOT NULL
+  * title VARCHAR(255) NOT NULL
+  * content TEXT NOT NULL
+  * image_url VARCHAR(255) 
+  * start_date DATE NOT NULL
+  * end_date DATE  NOT NULL
 
 ### Subscription_Plan 
-  plan_id INT PRIMARY KEY  NOT NULL
-  name VARCHAR(255)  NOT NULL
-  description TEXT  NOT NULL
-  price DECIMAL(10, 2)  NOT NULL
-  duration INT  NOT NULL
+  * plan_id INT PRIMARY KEY  NOT NULL
+  * name VARCHAR(255)  NOT NULL
+  * description TEXT  NOT NULL
+  * price DECIMAL(10, 2)  NOT NULL
+  * duration INT  NOT NULL
 
 ### Payment 
-  payment_id INT PRIMARY KEY NOT NULL
-  payment_date DATE  NOT NULL
-  FOREIGN KEY (user_id) REFERENCES User(user_id) NOT NULL
-  FOREIGN KEY (plan_id) REFERENCES Subscription_Plan(plan_id) NOT NULL
+  * payment_id INT PRIMARY KEY NOT NULL
+  * payment_date DATE  NOT NULL
+  * FOREIGN KEY (user_id) REFERENCES User(user_id) NOT NULL
+  * FOREIGN KEY (plan_id) REFERENCES Subscription_Plan(plan_id) NOT NULL
