@@ -50,7 +50,7 @@
 ### User 
   * user_id INT PRIMARY KEY NOT NULL
   * username VARCHAR(255) NOT NULL
-  * email VARCHAR(255) NOT NULL
+  * email VARCHAR(255) NOT NULL UNIQUE
   * password VARCHAR(255) NOT NULL
   * created_at TIMESTAMP NOT NULL
   * last_login TIMESTAMP NOT NULL
@@ -58,7 +58,7 @@
 
 ### Post 
   * post_id INT PRIMARY KEY NOT NULL
-  * title VARCHAR(255) NOT NULL
+  * title VARCHAR(255) NOT NULL UNIQUE
   * content TEXT NOT NULL
   * created_at TIMESTAMP NOT NULL
   * updated_at TIMESTAMP NOT NULL
@@ -80,7 +80,7 @@
 
 ### Tag 
   * tag_id INT PRIMARY KEY NOT NULL
-  * name VARCHAR(255) NOT NULL
+  * name VARCHAR(255) NOT NULL UNIQUE
 
 ### Post Tag(MTM)
   * post_tag_id INT PRIMARY KEY NOT NULL
@@ -106,7 +106,7 @@
 
 ### Advertisement 
   * ad_id INT PRIMARY KEY NOT NULL
-  * title VARCHAR(255) NOT NULL
+  * title VARCHAR(255) NOT NULL UNIQUE
   * content TEXT NOT NULL
   * image_url VARCHAR(255) 
   * start_date DATE NOT NULL
@@ -114,7 +114,7 @@
 
 ### Subscription_Plan 
   * plan_id INT PRIMARY KEY  NOT NULL
-  * name VARCHAR(255)  NOT NULL
+  * name VARCHAR(255)  NOT NULL UNIQUE
   * description TEXT  NOT NULL
   * price DECIMAL(10, 2)  NOT NULL
   * duration INT  NOT NULL
