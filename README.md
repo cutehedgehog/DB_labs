@@ -54,7 +54,7 @@
   * password VARCHAR(255) NOT NULL
   * created_at TIMESTAMP NOT NULL
   * last_login TIMESTAMP NOT NULL
-  * FOREIGN KEY (plan_id) REFERENCES Subscription_Plan(plan_id) 
+  * FOREIGN KEY (plan_id) REFERENCES Subscription_Plan(plan_id) NOT NULL
 
 ### Post 
   * post_id INT PRIMARY KEY NOT NULL
