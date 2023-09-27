@@ -98,7 +98,7 @@
   * FOREIGN KEY (user_id) REFERENCES User(user_id) NOT NULL
   * FOREIGN KEY (post_id) REFERENCES Post(post_id) NOT NULL
 
-### Follow (MTM)
+### Follow
   * follow_id INT PRIMARY KEY NOT NULL
   * subscribed_at TIMESTAMP NOT NULL
   * FOREIGN KEY (follower_id) REFERENCES User(user_id) NOT NULL
