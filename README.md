@@ -4,18 +4,14 @@
 1. User Registration and Authentication
 2. User Profile Management
 3. Post CRUD for User and Admin
-4. Comments CRUD for User and Admin
-5. Tag CRUD for Admin
-6. Likes and Bookmarks CRUD for User
-7. Users should be able to follow other users.
-8. Users should be able to subscribe to different payment plans offered by the system.
-9. User actions logging
-10. Payment plans CRUD for Admin
+4. Comments create for User
+5. Likes CRUD for User
+6. Users should be able to follow other users.
+7. Users should be able to subscribe to different payment plans offered by the system.
+8. User actions logging
+9. Payment plans CRUD for Admin
 # Use cases
 1. Admin:
-   - Manage Tags:
-     - Create new tags.
-     - Assign or remove tags to/from blog posts.
    - Manage Subscription Plans:
      - Create new subscription plans.
      - Update or delete existing subscription plans.
@@ -32,11 +28,7 @@
      - View and moderate comments on their blog posts.
    - Interact with Posts:
      - Like or unlike a blog post.
-     - Comment on blog posts.
-     - Bookmark a blog post for later reading.
-   - Manage Advertisements:
-     - Create new advertisements.
-     - Edit or remove existing advertisements.
+     - Comment on blog posts
    - Follow other users.
    - Subscribe to a payment plan.
 3. Unauthorized User:
