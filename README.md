@@ -9,7 +9,6 @@
 6. Users should be able to follow other users.
 7. Users should be able to subscribe to different payment plans offered by the system.
 8. User actions logging
-9. Payment plans CRUD for Admin
 # Use cases
 1. Admin:
    - Manage Subscription Plans:
